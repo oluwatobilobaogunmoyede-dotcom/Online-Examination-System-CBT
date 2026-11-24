@@ -1,7 +1,8 @@
-services:
+﻿services:
   - type: web
     name: online-examination-system-cbt
     runtime: python
+    plan: free
     buildCommand: bash build.sh
     startCommand: gunicorn exam_config.wsgi:application
     envVars:
@@ -20,5 +21,6 @@ services:
 
 databases:
   - name: online-examination-db
+    plan: free
     databaseName: online_examination
     user: exam_admin
